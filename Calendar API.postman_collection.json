@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "e1445ce4-93a8-40ab-8be5-12095f078e4c",
+		"name": "Calendar API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43186270",
+		"_collection_link": "https://gold-meteor-466749.postman.co/workspace/e6bacc89-1aaf-43dd-a222-8b585ca32961/collection/43186270-e1445ce4-93a8-40ab-8be5-12095f078e4c?action=share&source=collection_link&creator=43186270"
+	},
+	"item": [
+		{
+			"name": "등록",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"todo\":\"1\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/calendars",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars"
+					]
+				},
+				"description": "- 기능 : 등록\n    \n- Method: POST\n    \n- URL: /calendars\n    \n- Request Body:  \n    \\`\\`\\`json  \n    {  \n    \"name\": \"이름\",  \n    \"todo\": \"할일\",  \n    \"password\": \"비밀번호\"  \n    }\n    \n- Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "전체조회",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/calendars",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars"
+					]
+				},
+				"description": "- 기능 : 전체조회\n    \n- Method: GET\n    \n- URL: /calendars\n    \n- Request Body:\n    \n- Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "단건조회(id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/calendars/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars",
+						"1"
+					]
+				},
+				"description": "- 기능 : 단건조회\n    \n- Method: GET\n    \n- URL: /calendars/{id}\n    \n- Request Body:\n    \n- Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "조건조회(name, datetime)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/calendars/search?name=이름&updateAt=날짜",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "이름"
+						},
+						{
+							"key": "updateAt",
+							"value": "날짜"
+						}
+					]
+				},
+				"description": "- 기능 : 조건조회(name, datetime)\n    \n- Method: GET\n    \n- URL: /calendars/search?name={name}&updateAt={yyyy-mm-dd}\n    \n- Status Code: 200"
+			},
+			"response": []
+		},
+		{
+			"name": "단건 업데이트(id)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"todo\":\"1\",\r\n    \"password\":\"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/calendars/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars",
+						"1"
+					]
+				},
+				"description": "- 기능 : 단건수정\n    \n- Method: PUT\n    \n- URL: /calendars/search?name={name}&updateAt={yyyy-mm-dd}\n    \n- Request Body:  \n    \\`\\`\\`json  \n    {  \n    \"name\": \"수정할 작성자명\",  \n    \"todo\": \"수정할 할일\",  \n    \"password\": \"비밀번호\"  \n    }\n    \n- Status Code: 200\n    \n\n전에 작성했던 비밀번호와 동일해야 동작"
+			},
+			"response": []
+		},
+		{
+			"name": "단건삭제(id)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/calendars/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calendars",
+						"1"
+					]
+				},
+				"description": "- 기능 : 삭제\n    \n- Method: DELETE\n    \n- URL: /calendars/{id}\n    \n- Request Body:\n    \n- Status Code: 200"
+			},
+			"response": []
+		}
+	]
+}
